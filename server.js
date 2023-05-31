@@ -40,7 +40,8 @@ const server = http.createServer((req, res) => {
         res.end();
       }
     });
-  } else if (parsedUrl === "/public/images/desktopHero2.jpg") {
+  }
+  else if (parsedUrl === "/public/images/desktopHero2.jpg") {
     fs.readFile("./public/images/desktopHero2.jpg", (err, data) => {
       if (err) {
         console.log(err.message);
