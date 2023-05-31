@@ -1,4 +1,5 @@
 const fs = require("fs");
+const qs = require("qs");
 const handlers = {};
 
 handlers.displayDefault = (req, res) => {
@@ -93,6 +94,21 @@ handlers.writeFavicon = (req, res) => {
 
 handlers.notFound = (req, res) => {
   res.end(`404`);
+};
+
+handlers.searchQuery = (req, res) => {
+  let parsedData = "";
+  if (req.method === "GET") {
+    fs.readFile("./src/views/index.html", "utf8", (err, data) => {
+      req.on("data", (chunk) => {
+        parsedData += chunk;
+      });
+      req.on("end", () => {
+        parsedData = qs.parse(parsedData);
+        res.end();
+      });
+    });
+  }
 };
 
 module.exports = handlers;
