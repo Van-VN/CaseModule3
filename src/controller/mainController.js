@@ -1,15 +1,27 @@
 const fs = require("fs");
 const qs = require("qs");
 const handlers = {};
-
-handlers.displayDefault = (req, res) => {
-  fs.readFile("./src/views/index.html", (err, data) => {
+const UserController = require('./userController/userController')
+handlers.displayDefault = async (req, res) => {
+  // let info = await UserController.findById(7)
+  // console.log(info)
+  let info = 1
+  fs.readFile("./src/views/index.html", 'utf-8',(err, data) => {
     if (err) {
       console.log(err.message);
     } else {
       res.writeHead(200, { "Content-Type": "text/html" });
-      res.write(data);
-      res.end();
+      if(info === 1){
+      data = data.replace('/signin', 'https://www.facebook.com/')
+      data = data.replace('Sign In', 'Ahihi')
+        res.write(data);
+        res.end();
+      }
+      else {
+        res.write(data);
+        res.end();
+      }
+
     }
   });
 };
