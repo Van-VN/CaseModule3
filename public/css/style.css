@@ -159,14 +159,16 @@ input {
 .tags-btn-group {
   padding: 12px 60px 12px 60px;
   text-transform: uppercase;
-  border-radius: 20px;
+  border-radius: 40px;
   background-color: #1a1a1a;
   border: 2px solid #ff8a00;
   color: #ff8a00;
   font-size: 18px;
 }
 
-.tags-btn-group:hover {
+.tags-btn-group:hover,
+.tags-btn-group:focus,
+.tags-btn-group:active {
   background-color: #ff8a00;
   color: white;
   border: none;

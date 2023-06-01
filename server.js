@@ -7,8 +7,6 @@ const qs = require("qs");
 
 const server = http.createServer((req, res) => {
   let parsedUrl = url.parse(req.url, true).pathname;
-  console.log(router[parsedUrl]);
-
   let chosenHandlers;
   if (typeof router[parsedUrl] !== "undefined") {
     chosenHandlers = router[parsedUrl];

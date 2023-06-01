@@ -28,62 +28,56 @@
   </head>
   <body>
     <div class="sign-in-form">
-      <form method="post">
-        <form>
-          <h2 class="form-title">Nhập thông tin tài khoản</h2>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Nhập tên</label>
-            <input
-              type="name"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Nhập tên đăng nhập"
-              name="userName"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Nhập mật khẩu</label>
-            <input
-              type="password"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Nhập mật khẩu đăng nhập"
-              name="userPassword"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Nhập email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="name@example.com"
-              name="userEmail"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Nhập tuổi</label>
-            <input
-              type="number"
-              min="0"
-              step="1"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Nhập tuổi"
-              name="userAge"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Nhập số điện thoại</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Nhập số điện thoại"
-              name="userPhoneNum"
-            />
-          </div>
-        </form>
+      <form action="/signin" method="post">
+        <h2 class="form-title">Nhập thông tin tài khoản</h2>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Nhập tên</label>
+          <input
+            type="name"
+            class="form-control"
+            placeholder="Nhập tên đăng nhập"
+            name="userName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Nhập mật khẩu</label>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Nhập mật khẩu đăng nhập"
+            name="userPassword"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Nhập email</label>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="name@example.com"
+            name="userEmail"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Nhập tuổi</label>
+          <input
+            type="number"
+            min="0"
+            step="1"
+            class="form-control"
+            placeholder="Nhập tuổi"
+            name="userAge"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Nhập số điện thoại</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nhập số điện thoại"
+            name="userPhoneNum"
+          />
+        </div>
+
         <p>
           Đã có tài khoản?
           <strong><a href="/signin">Đăng nhập</a></strong> ngay!
