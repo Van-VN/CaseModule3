@@ -1,10 +1,11 @@
-const http = require("http");
+ const http = require("http");
 const fs = require("fs");
 const url = require("url");
 const path = require("path");
 const handlers = require("./src/controller/mainController");
 const qs = require("qs");
 
+const database = require('../CaseModule3/src/models/database')
 const server = http.createServer((req, res) => {
   let parsedUrl = url.parse(req.url).pathname;
 
@@ -15,6 +16,7 @@ const server = http.createServer((req, res) => {
   chosenHandlers(req, res);
 });
 
+database.connect()
 const router = {
   "/": handlers.displayDefault,
   "/search": handlers.searchQuery,
