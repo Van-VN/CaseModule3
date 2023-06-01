@@ -6,18 +6,29 @@ const handlers = require("./src/controller/mainController");
 const qs = require("qs");
 
 const server = http.createServer((req, res) => {
-  let parsedUrl = url.parse(req.url).pathname;
+  let parsedUrl = url.parse(req.url, true).pathname;
+  console.log(router[parsedUrl]);
 
-  let chosenHandlers =
-    typeof router[parsedUrl] !== undefined
-      ? router[parsedUrl]
-      : handlers.notFound;
+  let chosenHandlers;
+  if (typeof router[parsedUrl] !== "undefined") {
+    chosenHandlers = router[parsedUrl];
+  } else {
+    chosenHandlers = handlers.notFound(req, res);
+  }
+
+  //   let chosenHandlers =
+  //     typeof router[parsedUrl] !== undefined
+  //       ? router[parsedUrl]
+  //       : handlers.notFound(req, res);
   chosenHandlers(req, res);
 });
 
 const router = {
   "/": handlers.displayDefault,
+  "/signin": handlers.signIn,
+  "/signup": handlers.signUp,
   "/search": handlers.searchQuery,
+  "/dashboard": handlers.displayDashboard,
   "/public/css/style.css": handlers.writeCSS,
   "/public/images/logoBlackMain.png": handlers.writeMainLogo,
   "/public/images/desktopHero1.jpg": handlers.writeCarousel1stIMG,

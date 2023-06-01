@@ -2,8 +2,44 @@ const fs = require("fs");
 const qs = require("qs");
 const handlers = {};
 
+handlers.signIn = (req, res) => {
+  fs.readFile("./src/views/signin.html", "utf-8", (err, data) => {
+    if (err) {
+      console.log(err.message);
+    } else {
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.write(data);
+      res.end();
+    }
+  });
+};
+
+handlers.signUp = (req, res) => {
+  fs.readFile("./src/views/signup.html", "utf-8", (err, data) => {
+    if (err) {
+      console.log(err.message);
+    } else {
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.write(data);
+      res.end();
+    }
+  });
+};
+
 handlers.displayDefault = (req, res) => {
-  fs.readFile("./src/views/index.html", (err, data) => {
+  fs.readFile("./src/views/index.html", "utf-8", (err, data) => {
+    if (err) {
+      console.log(err.message);
+    } else {
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.write(data);
+      res.end();
+    }
+  });
+};
+
+handlers.displayDashboard = (req, res) => {
+  fs.readFile("./src/views/dashboard.html", "utf-8", (err, data) => {
     if (err) {
       console.log(err.message);
     } else {
@@ -21,7 +57,7 @@ handlers.writeCSS = (req, res) => {
 };
 
 handlers.writeClientJS = (req, res) => {
-  fs.readFile("./public/js/index.js", (err, data) => {
+  fs.readFile("./public/js/index.js", "utf-8", (err, data) => {
     if (err) {
       console.log(err.message);
     } else {

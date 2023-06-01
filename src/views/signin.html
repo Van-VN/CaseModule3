@@ -29,68 +29,42 @@
   <body>
     <div class="sign-in-form">
       <form method="post">
-        <form>
-          <h2 class="form-title">Nhập thông tin tài khoản</h2>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Nhập tên</label>
-            <input
-              type="name"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Nhập tên đăng nhập"
-              name="userName"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Nhập mật khẩu</label>
-            <input
-              type="password"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Nhập mật khẩu đăng nhập"
-              name="userPassword"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Nhập email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="name@example.com"
-              name="userEmail"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Nhập tuổi</label>
-            <input
-              type="number"
-              min="0"
-              step="1"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Nhập tuổi"
-              name="userAge"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Nhập số điện thoại</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Nhập số điện thoại"
-              name="userPhoneNum"
-            />
-          </div>
-        </form>
+        <img
+          src="https://i.pinimg.com/originals/5e/c1/e0/5ec1e02999bab8633be9f4dc330c6bee.gif"
+          alt="kisses"
+          width="100%"
+          class="sign-in-img"
+          ;
+        />
+        <h2 class="form-title">Đăng nhập để chia sẻ ngay!</h2>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Tên đăng nhập</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Nhập tên đăng nhập"
+            name="userName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Mật khẩu</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Nhập mật khẩu"
+            name="userPassword"
+          />
+        </div>
         <p>
-          Đã có tài khoản?
-          <strong><a href="/signin">Đăng nhập</a></strong> ngay!
+          Chưa có tài khoản?
+          <strong><a href="/signup">Đăng ký</a></strong> ngay!
         </p>
         <div class="centered-btn">
           <button type="submit" class="btn btn-primary btn-lg form-btn-lg">
-            Sign Up
+            Sign In
           </button>
         </div>
       </form>
